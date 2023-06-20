@@ -2,13 +2,13 @@
 #include <GLFW/glfw3.h>
 #include <pybind11/pybind11.h>
 
-auto load_window() -> void
+auto load_window(int width, int height) -> void
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	GLFWwindow* window = glfwCreateWindow(800, 600, "HinaPE is not a Physics Engine", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, "HinaPE is not a Physics Engine", NULL, NULL);
 	glfwMakeContextCurrent(window);
 
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
