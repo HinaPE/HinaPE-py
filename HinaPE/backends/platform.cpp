@@ -2,6 +2,9 @@
 #include "GLFW/glfw3.h"
 #include "platform.h"
 
+GLFWwindow *Kasumi::Platform::CURRENT_WINDOW = nullptr;
+std::vector<GLFWwindow *> Kasumi::Platform::WINDOWS = std::vector<GLFWwindow *>();
+
 auto Kasumi::Platform::Init() -> void
 {
 	glfwInit();
